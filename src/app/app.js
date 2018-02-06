@@ -65,6 +65,7 @@ var app = function ($) {
   };
 }(jQuery);
 
+//exports this function to use in app.component.ts
 var initializeAnimation = function(){
   app.init()
 }
@@ -72,4 +73,5 @@ var initializeAnimation = function(){
 // jQuery(document).ready(function () {
 //   app.init();
 // });
+
 //# sourceMappingURL=app.js.map

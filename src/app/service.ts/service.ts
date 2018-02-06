@@ -19,12 +19,14 @@ import 'rxjs/Rx';
     //IP
     baseUrl = 'http://localhost:8080/'
 
+    //get request
     getProjects(): Observable<any> {
       return this.http
       .get(this.baseUrl + 'api/projects')
       .map((response: Response)=> response.json());
     }
 
+    //post request to create new project from add_project.component
     createProject(projectDetails) {
       return this.http
       .post(this.baseUrl + 'api/projects', projectDetails)

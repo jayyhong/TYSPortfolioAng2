@@ -1,8 +1,10 @@
-import { Component, AfterViewChecked } from "@angular/core";
+import { Component, AfterViewInit } from "@angular/core";
 import { ProjectService } from "./service.ts/service";
 import "./app.js";
 
 declare var initializeAnimation: any;
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: "app-root",
@@ -17,14 +19,25 @@ export class AppComponent {
   constructor(private projectService: ProjectService) {
   }
   
+  //Assign this.projects with db information
   ngOnInit() {
     this.getAllProjects()
   }
   
-  ngAfterViewChecked() {
-    this.animationAdd();
+  //Adds animation on click functionality imported from app.js file
+  //fires off after view has loaded
+  ngAfterViewInit() {
+    setTimeout(()=> {
+      this.animationStart();
+      console.log("ngafterviewchecked")
+    },150)
+  }
+
+  animationStart() {
+    initializeAnimation();
   }
   
+  //.get request to DB for projects
   getAllProjects() {
     this.projectService.getProjects()
       .subscribe(
@@ -33,8 +46,5 @@ export class AppComponent {
       )
   }
 
-  animationAdd() {
-    initializeAnimation();
-  }
 
 }

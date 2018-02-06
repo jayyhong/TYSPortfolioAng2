@@ -15,7 +15,6 @@ export class AddProjectComponent implements OnInit {
   screenshot: String;
   mobileScreenshot: String;
   designers: any;
-  projects: any;
   errorMessage: String;
   testData: any;
 
@@ -178,9 +177,11 @@ export class AddProjectComponent implements OnInit {
     )
   }
 
+  //project data sent to database
   project = {
     category: null,
     name: null,
+    //body
     thumbnail: null,
     screenshot: "",
     mobileScreenshot: "",
@@ -194,6 +195,7 @@ export class AddProjectComponent implements OnInit {
         description: ""
       }
     ]
+    //next link
   }
 
 }
