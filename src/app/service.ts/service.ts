@@ -6,7 +6,9 @@ import 'rxjs/Rx';
 
 @Injectable()
   export class ProjectService{
+
     projects: any;
+
     constructor(private http:Http) {
 
     }
@@ -24,9 +26,9 @@ import 'rxjs/Rx';
     }
 
     createProject(projectDetails) {
-      console.log(projectDetails)
-      return this.http.post(this.baseUrl + 'api/projects', projectDetails)
-      .map(res => res.json())
+      return this.http
+      .post(this.baseUrl + 'api/projects', projectDetails)
+      .map((response: Response) => response.json());
     }
 
   }

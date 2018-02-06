@@ -1,13 +1,15 @@
 <div class="add_project">
-  Add Project
+  Add Project Test Form
   <br>
-  <input type="text" placeholder="Category" [(ngModel)]="project.category"> <br>
-  <input type="text" placeholder="Project Name" [(ngModel)]="project.name"> <br>
-  <input type="text" placeholder="Thumbnail" [(ngModel)]="project.thumbnail"> <br>
-  <input type="text" placeholder="ScreenShot" [(ngModel)]="project.screenshot"> <br>
-  <input type="text" placeholder="Mobile ScreenShot" [(ngModel)]="project.mobileScreenshot"> <br>
-  <input type="text" placeholder="Designer 1" [(ngModel)]="designer[0].name"> <br>
-  <input type="text" placeholder="Designer 2" [(ngModel)]="designer[1].name"> <br>
-  <button (click)="submitProject()">Submit</button>
-  <button >Cancel</button>
+  <input class="inpt" type="text" placeholder="Category" [(ngModel)]="project.category"> <br>
+  <input class="inpt" type="text" placeholder="Project Name" [(ngModel)]="project.name"> <br>
+  <input class="inpt" type="text" placeholder="Thumbnail" [(ngModel)]="project.thumbnail"> <br>
+  <input class="inpt" type="text" placeholder="ScreenShot" [(ngModel)]="project.screenshot"> <br>
+  <input class="inpt" type="text" placeholder="Mobile ScreenShot" [(ngModel)]="project.mobileScreenshot"> <br>
+  <input class="inpt" type="text" placeholder="Designer 1" [(ngModel)]="project.designers[0].name">
+  <input class="inpt" type="text" placeholder="Work Description" [(ngModel)]="project.designers[0].description"> <br>
+  <input class="inpt" type="text" placeholder="Designer 2" [(ngModel)]="project.designers[1].name">
+  <input class="inpt" type="text" placeholder="Work Description" [(ngModel)]="project.designers[1].description"> <br>
+  <button class="submit btn" (click)="submitProject()">Submit</button>
+  <button class="cancel btn">Cancel</button>
 </div>

@@ -64,7 +64,12 @@ var app = function ($) {
       }
   };
 }(jQuery);
-jQuery(document).ready(function () {
-  app.init();
-});
+
+var initializeAnimation = function(){
+  app.init()
+}
+
+// jQuery(document).ready(function () {
+//   app.init();
+// });
 //# sourceMappingURL=app.js.map

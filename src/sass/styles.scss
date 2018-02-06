@@ -10,42 +10,6 @@ Tags: TYS
 Text Domain: TYS
 */
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  animation-duration: 1.8s;
-  animation-name: fadeIn;
-}
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-/* universal reset */
-* {
-  vertical-align: baseline;
-  font-weight: inherit;
-  font-family: inherit;
-  font-style: inherit;
-  border: 0 none;
-  outline: 0;
-  padding: 0;
-  margin: 0;
-}
-
-.adminAddProject {
-}
-
 html, body {
   width: 100%;
   height: 100%;
@@ -207,70 +171,74 @@ h3 {
             }
           }
         }
-        &:nth-child(1) {
-          .holder {
-            .bg:after {
-              background: url("../assets/img/digital-1.jpg") no-repeat;
-              background-size: cover;
-            }
-          }
+
+        .holder {
+          background-size: cover;
         }
-        &:nth-child(2) {
-          .holder {
-            .bg:after {
-              background: url("../assets/img/digital-2.jpg") no-repeat;
-              background-size: cover;
-            }
-          }
-        }
-        &:nth-child(3) {
-          .holder {
-            .bg:after {
-              background: url("../assets/img/digital-3.jpg") no-repeat;
-              background-size: cover;
-            }
-          }
-        }
-        &:nth-child(4) {
-          .holder {
-            .bg:after {
-              background: url("../assets/img/digital-5.jpg") no-repeat;
-              background-size: cover;
-            }
-          }
-        }
-        &:nth-child(5) {
-          .holder {
-            .bg:after {
-              background: url("../assets/img/digital-7.jpg") no-repeat;
-              background-size: cover;
-            }
-          }
-        }
-        &:nth-child(6) {
-          .holder {
-            .bg:after {
-              background: url("../assets/img/digital-8.jpg") no-repeat;
-              background-size: cover;
-            }
-          }
-        }
-        &:nth-child(7) {
-          .holder {
-            .bg:after {
-              background: url("../assets/img/digital-9.jpg") no-repeat;
-              background-size: cover;
-            }
-          }
-        }
-        &:nth-child(8) {
-          .holder {
-            .bg:after {
-              background: url("../assets/img/digital-11.jpg") no-repeat;
-              background-size: cover;
-            }
-          }
-        }
+        // &:nth-child(1) {
+        //   .holder {
+        //     .bg:after {
+        //       background: url("../assets/img/digital-1.jpg") no-repeat;
+        //       background-size: cover;
+        //     }
+        //   }
+        // }
+        // &:nth-child(2) {
+        //   .holder {
+        //     .bg:after {
+        //       background: url("../assets/img/digital-2.jpg") no-repeat;
+        //       background-size: cover;
+        //     }
+        //   }
+        // }
+        // &:nth-child(3) {
+        //   .holder {
+        //     .bg:after {
+        //       background: url("../assets/img/digital-3.jpg") no-repeat;
+        //       background-size: cover;
+        //     }
+        //   }
+        // }
+        // &:nth-child(4) {
+        //   .holder {
+        //     .bg:after {
+        //       background: url("../assets/img/digital-5.jpg") no-repeat;
+        //       background-size: cover;
+        //     }
+        //   }
+        // }
+        // &:nth-child(5) {
+        //   .holder {
+        //     .bg:after {
+        //       background: url("../assets/img/digital-7.jpg") no-repeat;
+        //       background-size: cover;
+        //     }
+        //   }
+        // }
+        // &:nth-child(6) {
+        //   .holder {
+        //     .bg:after {
+        //       background: url("../assets/img/digital-8.jpg") no-repeat;
+        //       background-size: cover;
+        //     }
+        //   }
+        // }
+        // &:nth-child(7) {
+        //   .holder {
+        //     .bg:after {
+        //       background: url("../assets/img/digital-9.jpg") no-repeat;
+        //       background-size: cover;
+        //     }
+        //   }
+        // }
+        // &:nth-child(8) {
+        //   .holder {
+        //     .bg:after {
+        //       background: url("../assets/img/digital-11.jpg") no-repeat;
+        //       background-size: cover;
+        //     }
+        //   }
+        // }
         &.active {
           .full {
             display: flex;
