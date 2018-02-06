@@ -1,0 +1,531 @@
+<div class="panel-4">
+  <div class="projects">
+      <div class="project" *ngFor= "let project of projects" [ngClass]="{'animate': id == 1}" (click)="fadeInProject(1)">
+
+          <div class="holder">
+              <div class="overlay">
+                  <div class="info">
+                      <div class="category">{{project.category}}</div>
+                      <div class="project-name">{{project.name}}</div>
+                  </div>
+              </div>
+
+              <div class="bg"></div>
+          </div>
+          <div class="full" style="background-image: url(../assets/img/portfolio/shared/blur_bg.jpg)">
+              <div class="animation_container">
+                  <div class="mobile_header">
+                      <h3>{{project.name}}</h3>
+                  </div>
+                  <div class="screenshots_container">
+                      <div class="screenshots">
+                          <div class="item">
+                              <img src={{project.screenshot}} alt="">
+                              <iframe class="lg-show" src="ProSenseBanners_728x90/ProSenseBanners_728x90.html" style="background-image:url(img/ProSense.png);width:728px;height:90px;margin-top:50px;"></iframe>
+                              <iframe class="lg-hide" src="ProSenseBanners_300x250/ProSenseBanners_300x250.html" style="background-image:url(img/ProSense.png);width:300px;height:250px;margin-top:50px;"></iframe>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="screenshots_mobile">
+                      <img src={{project.mobileScreenshot}} alt="">
+                  </div>
+                  <div class="info">
+                      <div class="holder">
+                          <h3>{{project.name}}</h3>
+                          <div class="block">
+                              <h4>Designers</h4>
+                              <p> {{project.designers[0].name}}: {{project.designers[0].description}}
+                              </p>
+                              <p>
+                                  {{project.designers[1].name}}: {{project.designers[1].description}}
+                              </p>
+                          </div>
+                          <div class="buttons">
+                              <a href="#" class="close">
+                                  Close
+                              </a>
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="header">
+                      <a href="#" class="close">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                              <g data-name="close">
+                                  <path d="M36.09 13.91L13.91 36.09m0-22.18l22.18 22.18" fill="none" stroke="#fff"
+                                        stroke-miterlimit="10" stroke-width="2"/>
+                                  <circle cx="25" cy="25" r="25" fill="#fff"/>
+                                  <path d="M25 2A23 23 0 1 1 2 25 23 23 0 0 1 25 2m0-2a25 25 0 1 0 25 25A25 25 0 0 0 25 0z"
+                                        fill="#fff"/>
+                              </g>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- <div class="project two">
+
+          <div class="holder">
+              <div class="overlay">
+                  <div class="info">
+                      <div class="category">Digital</div>
+                      <div class="project-name">Epson Home Cinema Campaign for BestBuy.com
+                      </div>
+                  </div>
+              </div>
+
+              <div class="bg"></div>
+          </div>
+          <div class="full" style="background-image: url(img/portfolio/shared/blur_bg.jpg)">
+              <div class="animation_container">
+                  <div class="mobile_header">
+                      <h3>Epson Home Cinema Campaign for BestBuy.com</h3>
+                  </div>
+                  <div class="screenshots_container">
+                      <div class="screenshots">
+                          <div class="item">
+                              <img src="img/portfolio/shared/digital-epson-best-buy-landing-full-100.jpg" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="screenshots_mobile">
+                      <img src="img/portfolio/shared/mobile/digital-epson-best-buy-landing-full-100.jpg" alt="">
+                  </div>
+                  <div class="info">
+                      <div class="holder">
+                          <h3>Epson Home Cinema Campaign for BestBuy.com</h3>
+                          <div class="block">
+                              <h4>Designers</h4>
+                              <p>
+                                  Edwin Gil: Design and layout
+                              </p>
+                              <p>
+                                  Bryan Tan: HTML5 development
+                              </p>
+                          </div>
+
+                          <div class="buttons">
+                              <a href="https://www.bestbuy.com/site/clp/epson-home-cinema-projector/pcmcat1499264867915.c?id=pcmcat1499264867915" target="_blank">Visit Site </a>
+                              <a href="#" class="close">
+                                  Close
+                              </a>
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="header">
+                      <a href="#" class="close">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                              <g data-name="close">
+                                  <path d="M36.09 13.91L13.91 36.09m0-22.18l22.18 22.18" fill="none" stroke="#fff"
+                                        stroke-miterlimit="10" stroke-width="2"/>
+                                  <circle cx="25" cy="25" r="25" fill="#fff"/>
+                                  <path d="M25 2A23 23 0 1 1 2 25 23 23 0 0 1 25 2m0-2a25 25 0 1 0 25 25A25 25 0 0 0 25 0z"
+                                        fill="#fff"/>
+                              </g>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="project three">
+
+          <div class="holder">
+              <div class="overlay">
+                  <div class="info">
+                      <div class="category">Digital</div>
+                      <div class="project-name">Southern California Edison Solar & You</div>
+                  </div>
+              </div>
+
+              <div class="bg"></div>
+
+          </div>
+          <div class="full" style="background-image: url(img/portfolio/shared/blur_bg.jpg)">
+              <div class="animation_container">
+                  <div class="mobile_header">
+                      <h3>Southern California Edison Solar & You</h3>
+                  </div>
+                  <div class="screenshots_container">
+                      <div class="screenshots">
+                          <div class="item">
+                              <img src="img/portfolio/shared/digital-sce-solar-full-100.jpg" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="screenshots_mobile">
+                      <img src="img/portfolio/shared/mobile/digital-sce-solar-full-100.jpg" alt="">
+                  </div>
+                  <div class="info">
+                      <div class="holder">
+                          <h3>Southern California Edison Solar & You</h3>
+                          <div class="block">
+                              <h4>Designers</h4>
+                              <p>
+                                  Edwin Gil: Design and layout
+                              </p>
+                              <p>
+                                  Bryan Tan: HTML5 development, animation production, web accessibility
+                              </p>
+                          </div>
+
+                          <div class="buttons">
+                              <a href="http://on.sce.com/solarandyou" target="_blank">Visit Site </a>
+                              <a href="#" class="close">
+                                  Close
+                              </a>
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="header">
+                      <a href="#" class="close">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                              <g data-name="close">
+                                  <path d="M36.09 13.91L13.91 36.09m0-22.18l22.18 22.18" fill="none" stroke="#fff"
+                                        stroke-miterlimit="10" stroke-width="2"/>
+                                  <circle cx="25" cy="25" r="25" fill="#fff"/>
+                                  <path d="M25 2A23 23 0 1 1 2 25 23 23 0 0 1 25 2m0-2a25 25 0 1 0 25 25A25 25 0 0 0 25 0z"
+                                        fill="#fff"/>
+                              </g>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="project four">
+
+          <div class="holder">
+              <div class="overlay">
+                  <div class="info">
+                      <div class="category">Digital</div>
+                      <div class="project-name">Amazon Sony Online Experience
+                      </div>
+                  </div>
+              </div>
+              <div class="bg"></div>
+          </div>
+          <div class="full" style="background-image: url(img/portfolio/shared/blur_bg.jpg)">
+              <div class="animation_container">
+                  <div class="mobile_header">
+                      <h3>Amazon Sony Online Experience
+                      </h3>
+                  </div>
+                  <div class="screenshots_container">
+                      <div class="screenshots">
+                          <div class="item">
+                              <img src="img/portfolio/shared/digital-amazon-sony-full-100.jpg" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="screenshots_mobile">
+                      <img src="img/portfolio/shared/mobile/digital-amazon-sony-full-100.jpg" alt="">
+                  </div>
+                  <div class="info">
+                      <div class="holder">
+                          <h3>Amazon Sony Online Experience</h3>
+                          <div class="block">
+                              <h4>Designers</h4>
+                              <p>
+                                  Edwin Gil: Design and layout
+                              </p>
+                              <p>
+                                  Bryan Tan: HTML5 development, animation production
+                              </p>
+                          </div>
+                          <div class="buttons">
+                              <a href="http://amazonsony.archive.tyscreative.com/" target="_blank">Visit Site </a>
+                              <a href="#" class="close">
+                                  Close
+                              </a>
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="header">
+                      <a href="#" class="close">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                              <g data-name="close">
+                                  <path d="M36.09 13.91L13.91 36.09m0-22.18l22.18 22.18" fill="none" stroke="#fff"
+                                        stroke-miterlimit="10" stroke-width="2"/>
+                                  <circle cx="25" cy="25" r="25" fill="#fff"/>
+                                  <path d="M25 2A23 23 0 1 1 2 25 23 23 0 0 1 25 2m0-2a25 25 0 1 0 25 25A25 25 0 0 0 25 0z"
+                                        fill="#fff"/>
+                              </g>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="project five">
+
+          <div class="holder">
+              <div class="overlay">
+                  <div class="info">
+                      <div class="category">Print</div>
+                      <div class="project-name">Thinfilm Annual Report
+                      </div>
+                  </div>
+              </div>
+
+              <div class="bg"></div>
+          </div>
+          <div class="full" style="background-image: url(img/portfolio/shared/blur_bg.jpg)">
+              <div class="animation_container">
+                  <div class="mobile_header">
+                      <h3>Thinfilm Annual Report
+                      </h3>
+                  </div>
+                  <div class="screenshots_container">
+                      <div class="screenshots">
+                          <div class="item">
+                              <img src="img/portfolio/shared/digital-thinfilm-full-100.jpg" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="screenshots_mobile">
+                      <img src="img/portfolio/shared/mobile/digital-thinfilm-full-100.jpg" alt="">
+                  </div>
+                  <div class="info">
+                      <div class="holder">
+                          <h3>Thinfilm Annual Report</h3>
+                          <div class="block">
+                              <h4>Designers</h4>
+                              <p>
+                                  Edwin Gil: Design and layout
+                              </p>
+                              <p>
+                                  Bryan Tan: Print production
+                              </p>
+                          </div>
+
+                          <div class="buttons">
+                              <a href="#" class="close">
+                                  Close
+                              </a>
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="header">
+                      <a href="#" class="close">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                              <g data-name="close">
+                                  <path d="M36.09 13.91L13.91 36.09m0-22.18l22.18 22.18" fill="none" stroke="#fff"
+                                        stroke-miterlimit="10" stroke-width="2"/>
+                                  <circle cx="25" cy="25" r="25" fill="#fff"/>
+                                  <path d="M25 2A23 23 0 1 1 2 25 23 23 0 0 1 25 2m0-2a25 25 0 1 0 25 25A25 25 0 0 0 25 0z"
+                                        fill="#fff"/>
+                              </g>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="project six">
+
+          <div class="holder">
+              <div class="overlay">
+                  <div class="info">
+                      <div class="category">Print</div>
+                      <div class="project-name">Epson Display Solutions Ads</div>
+                  </div>
+              </div>
+              <div class="bg"></div>
+          </div>
+          <div class="full" style="background-image: url(img/portfolio/shared/blur_bg.jpg)">
+              <div class="animation_container">
+                  <div class="mobile_header">
+                      <h3>Epson Display Solutions Ads</h3>
+                  </div>
+                  <div class="screenshots_container">
+                      <div class="screenshots">
+                          <div class="item">
+                              <img src="img/portfolio/shared/digital-epson-projector-ads-full-100.jpg" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="screenshots_mobile">
+                      <img src="img/portfolio/shared/mobile/digital-epson-projector-ads-full-100.jpg" alt="">
+                  </div>
+                  <div class="info">
+                      <div class="holder">
+                          <h3>Epson Display Solutions Ads</h3>
+                          <div class="block">
+                              <h4>Designers</h4>
+                              <p>
+                                  Edwin Gil: Design and layout
+                              </p>
+                              <p>
+                                  Bryan Tan: Print production
+                              </p>
+                          </div>
+
+                          <div class="buttons">
+                              <a href="#" class="close">
+                                  Close
+                              </a>
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="header">
+                      <a href="#" class="close">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                              <g data-name="close">
+                                  <path d="M36.09 13.91L13.91 36.09m0-22.18l22.18 22.18" fill="none" stroke="#fff"
+                                        stroke-miterlimit="10" stroke-width="2"/>
+                                  <circle cx="25" cy="25" r="25" fill="#fff"/>
+                                  <path d="M25 2A23 23 0 1 1 2 25 23 23 0 0 1 25 2m0-2a25 25 0 1 0 25 25A25 25 0 0 0 25 0z"
+                                        fill="#fff"/>
+                              </g>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="project seven">
+
+          <div class="holder">
+              <div class="overlay">
+                  <div class="info">
+                      <div class="category">Print</div>
+                      <div class="project-name">Mopria Alliance Datasheets
+                      </div>
+                  </div>
+              </div>
+              <div class="bg"></div>
+          </div>
+          <div class="full" style="background-image: url(img/portfolio/shared/blur_bg.jpg)">
+              <div class="animation_container">
+                  <div class="mobile_header">
+                      <h3>Mopria Alliance Datasheets
+                      </h3>
+                  </div>
+                  <div class="screenshots_container">
+                      <div class="screenshots">
+                          <div class="item">
+                              <img src="img/portfolio/shared/digital-mopria-full-100.jpg" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="screenshots_mobile">
+                      <img src="img/portfolio/shared/mobile/digital-mopria-full-100.jpg" alt="">
+                  </div>
+                  <div class="info">
+                      <div class="holder">
+                          <h3>Mopria Alliance Datasheets
+                          </h3>
+                          <div class="block">
+                              <h4>Designers</h4>
+                              <p>
+                                  Edwin Gil: Design and layout
+                              </p>
+                              <p>
+                                  Bryan Tan: Print production
+                              </p>
+                          </div>
+
+                          <div class="buttons">
+                              <a href="#" class="close">
+                                  Close
+                              </a>
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="header">
+                      <a href="#" class="close">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                              <g data-name="close">
+                                  <path d="M36.09 13.91L13.91 36.09m0-22.18l22.18 22.18" fill="none" stroke="#fff"
+                                        stroke-miterlimit="10" stroke-width="2"/>
+                                  <circle cx="25" cy="25" r="25" fill="#fff"/>
+                                  <path d="M25 2A23 23 0 1 1 2 25 23 23 0 0 1 25 2m0-2a25 25 0 1 0 25 25A25 25 0 0 0 25 0z"
+                                        fill="#fff"/>
+                              </g>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="project eight">
+
+          <div class="holder">
+              <div class="overlay">
+                  <div class="info">
+                      <div class="category">Print</div>
+                      <div class="project-name">Southern California Edison Charge Ready Quarterly Report
+                      </div>
+                  </div>
+              </div>
+              <div class="bg"></div>
+          </div>
+          <div class="full" style="background-image: url(img/portfolio/shared/blur_bg.jpg)">
+              <div class="animation_container">
+                  <div class="mobile_header">
+                      <h3>Southern California Edison Charge Ready Quarterly Report
+                      </h3>
+                  </div>
+                  <div class="screenshots_container">
+                      <div class="screenshots">
+                          <div class="item">
+                              <img src="img/portfolio/shared/digital-sce-charge-ready-full-100.jpg" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="screenshots_mobile">
+                      <img src="img/portfolio/shared/mobile/digital-sce-charge-ready-full-100.jpg" alt="">
+                  </div>
+                  <div class="info">
+                      <div class="holder">
+                          <h3>Southern California Edison Charge Ready Quarterly Report
+                          </h3>
+                          <div class="block">
+                              <h4>Designers</h4>
+                              <p>
+                                  Edwin Gil: Design and layout
+                              </p>
+                              <p>
+                                  Bryan Tan: Print production
+                              </p>
+                          </div>
+
+                          <div class="buttons">
+                              <a href="#" class="close">
+                                  Close
+                              </a>
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="header">
+                      <a href="#" class="close">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                              <g data-name="close">
+                                  <path d="M36.09 13.91L13.91 36.09m0-22.18l22.18 22.18" fill="none" stroke="#fff"
+                                        stroke-miterlimit="10" stroke-width="2"/>
+                                  <circle cx="25" cy="25" r="25" fill="#fff"/>
+                                  <path d="M25 2A23 23 0 1 1 2 25 23 23 0 0 1 25 2m0-2a25 25 0 1 0 25 25A25 25 0 0 0 25 0z"
+                                        fill="#fff"/>
+                              </g>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+  </div>
+</div>
+<div class="fader" [ngClass]="{'animate': id == 1}" (click)="addClass(1)">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+</div>
