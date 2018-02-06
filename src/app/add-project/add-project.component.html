@@ -1,0 +1,13 @@
+<div class="add_project">
+  Add Project
+  <br>
+  <input type="text" placeholder="Category" [(ngModel)]="project.category"> <br>
+  <input type="text" placeholder="Project Name" [(ngModel)]="project.name"> <br>
+  <input type="text" placeholder="Thumbnail" [(ngModel)]="project.thumbnail"> <br>
+  <input type="text" placeholder="ScreenShot" [(ngModel)]="project.screenshot"> <br>
+  <input type="text" placeholder="Mobile ScreenShot" [(ngModel)]="project.mobileScreenshot"> <br>
+  <input type="text" placeholder="Designer 1" [(ngModel)]="designer[0].name"> <br>
+  <input type="text" placeholder="Designer 2" [(ngModel)]="designer[1].name"> <br>
+  <button (click)="submitProject()">Submit</button>
+  <button >Cancel</button>
+</div>

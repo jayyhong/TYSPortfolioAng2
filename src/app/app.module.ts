@@ -3,12 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { HttpModule, JsonpModule } from '@angular/http';
+import { AddProjectComponent } from './add-project/add-project.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddProjectComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    JsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

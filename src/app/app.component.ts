@@ -1,19 +1,23 @@
 import { Component } from "@angular/core";
 import "./app.js";
+import { ProjectService } from "./service.ts/service";
 
 declare var app: any;
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
+  providers: [ProjectService],
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
   id: any;
+  testProjects: any;
   projects: any;
   htmlToAdd: any;
+  errorMessage: string;
 
-  constructor() {
+  constructor(private projectService: ProjectService) {
 
     this.projects = [
       {
@@ -30,7 +34,7 @@ export class AppComponent {
           },
           {
             name: "Bryan Tan",
-            description: "HTML5 development,"
+            description: "HTML5 development"
           }
         ],
       },
@@ -48,7 +52,7 @@ export class AppComponent {
           },
           {
             name: "Bryan Tan",
-            description: "HTML5 development,"
+            description: "HTML5 development"
           }
         ],
       },
@@ -165,12 +169,21 @@ export class AppComponent {
   }
 
   ngOnInit() {
-
+    // this.getAllProjects()
   }
 
-  addInnerHtml(id) {
-    for (let i = 0; i < this.projects[id + 1].designers.length; i++)
-    this.htmlToAdd = this.projects[id + 1].designers[i].name + ": " + this.projects[id + 1].designers[i].description
-  }
+  // getAllProjects() {
+  //   this.projectService.getProjects()
+  //     .subscribe(
+  //       projects => this.projects = projects,
+  //       error => this.errorMessage = <any>error
+  //     );
+  //     console.log(this.projects)
+  // }
+
+  // addInnerHtml(id) {
+  //   for (let i = 0; i < this.projects[id + 1].designers.length; i++)
+  //   this.htmlToAdd = this.projects[id + 1].designers[i].name + ": " + this.projects[id + 1].designers[i].description
+  // }
 
 }
