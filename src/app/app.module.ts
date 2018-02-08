@@ -1,36 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FileSelectDirective } from 'ng2-file-upload'
+import { FileSelectDirective } from 'ng2-file-upload';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin/admin.component';
 
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
-  { path: 'admin', component: AdminComponent},
+  {path: '', component: AppComponent},
+  {path: 'admin', component: AdminComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     AddProjectComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    AdminComponent
   ],
   imports: [
-    BrowserModule,
-    HttpModule,
-    JsonpModule,
-    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }
-    )
+    ),
+    BrowserModule,
+    HttpModule,
+    JsonpModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent, AdminComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

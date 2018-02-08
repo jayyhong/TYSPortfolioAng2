@@ -2,6 +2,9 @@
   <div class="projects">
     <div class="project" *ngFor="let project of projects">
 
+      <!-- ONLY IF ADMIN -->
+    <button class="deleteButton">DELETE</button>
+
       <div class="holder fadeIn" [style.backgroundImage]="'url('+ project.thumbnail +')'">
         <div class="overlay">
           <div class="info">
@@ -63,7 +66,6 @@
         </div>
       </div>
     </div>
-    <app-add-project></app-add-project>
   </div>
 </div>
 
@@ -79,20 +81,17 @@
     <input class="inpt body" type="text" placeholder="Body" [(ngModel)]="project.body">
     <br>
     <span class="uploadFont" style="margin-left: -25px;">
-      <input class="uploadInput" type="file" id="file1" name="photo" ng2FileSelect [uploader]="uploader" />
-      Thumbnail
+      <input class="uploadInput" type="file" id="file1" name="photo" ng2FileSelect [uploader]="uploader" /> Thumbnail
     </span>
     <!-- <label for ="file1">Thumbnail</label> -->
     <br>
     <span class="uploadFont" style="margin-left: -18px;">
-      <input class="uploadInput" type="file" id="file2" name="photo" ng2FileSelect [uploader]="uploader" />
-      ScreenShot
+      <input class="uploadInput" type="file" id="file2" name="photo" ng2FileSelect [uploader]="uploader" /> ScreenShot
     </span>
     <!-- <label for ="file2">Screenshot</label> -->
     <br>
     <span class="uploadFont" style="margin-left: 18px;">
-      <input class="uploadInput" type="file" id="file3" name="photo" ng2FileSelect [uploader]="uploader" />
-      Mobile Screenshot
+      <input class="uploadInput" type="file" id="file3" name="photo" ng2FileSelect [uploader]="uploader" /> Mobile Screenshot
     </span>
     <!-- <label for ="file3">Mobile Screenshot</label> -->
     <br>
