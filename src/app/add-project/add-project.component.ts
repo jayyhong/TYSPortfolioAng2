@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../service.ts/service';
+import { FileUploader } from 'ng2-file-upload';
+
+const URL = 'http://localhost:8080/api/upload';
 
 @Component({
   selector: 'app-add-project',
@@ -8,7 +11,7 @@ import { ProjectService } from '../service.ts/service';
   styleUrls: ['./add-project.component.scss']
 })
 export class AddProjectComponent implements OnInit {
-
+  
   category: String;
   name: String;
   thumbnail: String;
@@ -17,155 +20,27 @@ export class AddProjectComponent implements OnInit {
   designers: any;
   errorMessage: String;
   testData: any;
+  imgPath: any;
+  
+  public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
 
   constructor(private projectService: ProjectService) {
-    this.testData = [
-      {
-        category: "Digital",
-        name: "Epson ProSense Animated Banners for BestBuy.com",
-        thumbnail: "../assets/img/digital-1.jpg",
-        screenshot: "../assets/img/portfolio/shared/digital-epson-best-buy-full-100.jpg",
-        mobileScreenshot: "../assets/img/portfolio/shared/mobile/digital-epson-best-buy-full-100.jpg",
-        designers: [
-          {
-            name: "Edwin Gil",
-            description: "Design and layout"
-          },
-          {
-            name: "Bryan Tan",
-            description: "HTML5 development"
-          }
-        ],
-      },
-      {
-        category: "Digital",
-        name: "Epson Home Cinema Campaign for BestBuy.com",
-        thumbnail: "../assets/img/digital-2.jpg",
-        screenshot: "../assets/img/portfolio/shared/digital-epson-best-buy-landing-full-100.jpg",
-        mobileScreenshot: "../assets/img/portfolio/shared/mobile/digital-epson-best-buy-landing-full-100.jpg",
-        designers: [
-          {
-            name: "Edwin Gil",
-            description: "Design and layout"
-          },
-          {
-            name: "Bryan Tan",
-            description: "HTML5 development"
-          }
-        ],
-      },
-      {
-        category: "Digital",
-        name: "Southern California Edison Solar & You",
-        thumbnail: "../assets/img/digital-3.jpg",
-        screenshot: "../assets/img/portfolio/shared/digital-sce-solar-full-100.jpg",
-        mobileScreenshot: "../assets/img/portfolio/shared/mobile/digital-sce-solar-full-100.jpg",
-        designers: [
-          {
-            name: "Edwin Gil",
-            description: "Design and layout"
-          },
-          {
-            name: "Bryan Tan",
-            description: "HTML5 development, animation production, web accessibility"
-          }
-        ],
-      },
-      {
-        category: "Digital",
-        name: "Amazon Sony Online Experience",
-        thumbnail: "../assets/img/digital-5.jpg",
-        screenshot: "../assets/img/portfolio/shared/digital-amazon-sony-full-100.jpg",
-        mobileScreenshot: "../assets/img/portfolio/shared/mobile/digital-amazon-sony-full-100.jpg",
-        designers: [
-          {
-            name: "Edwin Gil",
-            description: "Design and layout"
-          },
-          {
-            name: "Bryan Tan",
-            description: "HTML5 development, animation production"
-          }
-        ],
-      },
-      {
-        category: "Print",
-        name: "Thinfilm Annual Report",
-        thumbnail: "../assets/img/digital-7.jpg",
-        screenshot: "../assets/img/portfolio/shared/digital-thinfilm-full-100.jpg",
-        mobileScreenshot: "../assets/img/portfolio/shared/mobile/digital-thinfilm-full-100.jpg",
-        designers: [
-          {
-            name: "Edwin Gil",
-            description: "Design and layout"
-          },
-          {
-            name: "Bryan Tan",
-            description: "Print production"
-          }
-        ],
-      },
-      {
-        category: "Print",
-        name: "Epson Display Solutions Ads",
-        thumbnail: "../assets/img/digital-8.jpg",
-        screenshot: "../assets/img/portfolio/shared/digital-epson-projector-ads-full-100.jpg",
-        mobileScreenshot: "../assets/img/portfolio/shared/mobile/digital-epson-projector-ads-full-100.jpg",
-        designers: [
-          {
-            name: "Edwin Gil",
-            description: "Design and layout"
-          },
-          {
-            name: "Bryan Tan",
-            description: "Print production"
-          }
-        ],
-      },
-      {
-        category: "Print",
-        name: "Mopria Alliance Datasheets",
-        thumbnail: "../assets/img/digital-9.jpg",
-        screenshot: "../assets/img/portfolio/shared/digital-mopria-full-100.jpg",
-        mobileScreenshot: "../assets/img/portfolio/shared/mobile/digital-mopria-full-100.jpg",
-        designers: [
-          {
-            name: "Edwin Gil",
-            description: "Design and layout"
-          },
-          {
-            name: "Bryan Tan",
-            description: "Print production"
-          }
-        ],
-      },
-      {
-        category: "Print",
-        name: "Southern California Edison Charge Ready Quarterly Report",
-        thumbnail: "../assets/img/digital-11.jpg",
-        screenshot: "../assets/img/portfolio/shared/digital-sce-charge-ready-full-100.jpg",
-        mobileScreenshot: "../assets/img/portfolio/shared/mobile/digital-sce-charge-ready-full-100.jpg",
-        designers: [
-          {
-            name: "Edwin Gil",
-            description: "Design and layout"
-          },
-          {
-            name: "Bryan Tan",
-            description: "Print production"
-          }
-        ],
-      },
-      
-    ]
+
    }
 
-   
-
   ngOnInit() {
-    // for (let i = 0; i < this.testData.length; i++) {
-    //   this.submitProject(this.testData[i])
-    // }
+    //ng2-file-upload
+    this.uploader.onAfterAddingFile = (file) => {
+      file.withCredentials = false;
+    }
+    this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
+      console.log("ImageUpload:uploaded", item, status, response);
+      console.log("UPLOAD DETAILS", response)
+      this.imgPath = ".." + response.slice(4)
+      console.log(this.imgPath)
+      this.project.thumbnail = this.imgPath;
+      console.log(this.project)
+    }
   }
 
   submitProject() {
@@ -173,8 +48,10 @@ export class AddProjectComponent implements OnInit {
     this.projectService.createProject(this.project)
     .subscribe(
       data => console.log('Project Posted Success'),
-      error => console.log('Error posting Project')
+      error => console.log('Error posting Project'),
     )
+    //get request to rerender
+    this.projectService.getProjects()
   }
 
   //project data sent to database
