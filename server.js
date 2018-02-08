@@ -11,7 +11,8 @@ const app = express();
 
 //authentication into db
 mongoose.connect(
-  "mongodb://jayyhong:Cactus123@ds125588.mlab.com:25588/tysportfolio",
+  // "mongodb://jayyhong:Cactus123@ds125588.mlab.com:25588/tysportfolio",
+  "mongodb://127.0.0.1/tysportfolio",
   function(err) {
     if (err) return console.log(err);
     console.log("Connected to MongoDB");
